@@ -104,8 +104,8 @@ Prior to your first deployment, you'll need to do a few things:
 - Create two apps on Fly, one for staging and one for production:
 
   ```sh
-  fly apps create dbs-cards-954c
-  fly apps create dbs-cards-954c-staging
+  fly apps create dbs-cards
+  fly apps create dbs-cards-staging
   ```
 
   > **Note:** Make sure this name matches the `app` set in your `fly.toml` file.
@@ -134,8 +134,8 @@ Prior to your first deployment, you'll need to do a few things:
   following commands:
 
   ```sh
-  fly secrets set SESSION_SECRET=$(openssl rand -hex 32) --app dbs-cards-954c
-  fly secrets set SESSION_SECRET=$(openssl rand -hex 32) --app dbs-cards-954c-staging
+  fly secrets set SESSION_SECRET=$(openssl rand -hex 32) --app dbs-cards
+  fly secrets set SESSION_SECRET=$(openssl rand -hex 32) --app dbs-cards-staging
   ```
 
   If you don't have openssl installed, you can also use
@@ -146,8 +146,8 @@ Prior to your first deployment, you'll need to do a few things:
   production environments. Run the following:
 
   ```sh
-  fly volumes create data --size 1 --app dbs-cards-954c
-  fly volumes create data --size 1 --app dbs-cards-954c-staging
+  fly volumes create data --size 1 --app dbs-cards
+  fly volumes create data --size 1 --app dbs-cards-staging
   ```
 
 Now that everything is set up you can commit and push your changes to your repo.
